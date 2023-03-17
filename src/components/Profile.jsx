@@ -1,11 +1,4 @@
-export const Profile = ({
-  username,
-  tag,
-  location,
-  avatar,
-  stats,
-  children,
-}) => (
+export const Profile = ({ username, tag, location, avatar, stats }) => (
   <div>
     <div>
       <img src={avatar} alt="User avatar" width="180" />
@@ -27,6 +20,5 @@ export const Profile = ({
         <span>{stats.likes}</span>
       </li>
     </ul>
-    {children}
   </div>
 );

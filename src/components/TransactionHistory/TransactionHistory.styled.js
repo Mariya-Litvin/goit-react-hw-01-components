@@ -14,7 +14,8 @@ export const TableHead = styled.thead`
 export const TableName = styled.tr`
   text-align: center;
   font-weight: 900;
-  font-size: 20px;
+  font-size: 18px;
+  text-transform: uppercase;
 `;
 
 export const TableCell = styled.th`
@@ -36,4 +37,5 @@ export const TableRow = styled.tr`
 export const TableItem = styled.td`
   padding: 12px;
   border: 1px solid #c5d0e6;
+  text-transform: capitalize;
 `;

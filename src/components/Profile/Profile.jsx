@@ -7,17 +7,22 @@ import {
   ListItemQuantity,
   UserInfo,
   Wrapper,
+  UserInfoText,
+  UserInfoAbout,
+  UserInfoImg,
 } from './Profile.styled';
+
+import PropTypes from 'prop-types';
 
 export const Profile = ({
   user: { username, tag, location, avatar, stats },
 }) => (
   <Wrapper>
     <UserInfo>
-      <img className="avatar" src={avatar} alt="User avatar" width="150" />
-      <p className="name">{username}</p>
-      <p className="tag">{tag}</p>
-      <p className="location">{location}</p>
+      <UserInfoImg src={avatar} alt="User avatar" width="180" />
+      <UserInfoText>{username}</UserInfoText>
+      <UserInfoAbout>@{tag}</UserInfoAbout>
+      <UserInfoAbout>{location}</UserInfoAbout>
     </UserInfo>
     <List>
       <ListItem>
@@ -35,3 +40,19 @@ export const Profile = ({
     </List>
   </Wrapper>
 );
+
+Profile.propTypes = {
+  user: PropTypes.shape({
+    username: PropTypes.string.isRequired,
+    tag: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
+    stats: PropTypes.shape({
+      followers: PropTypes.number.isRequired,
+      views: PropTypes.number.isRequired,
+      likes: PropTypes.number.isRequired,
+    }).isRequired,
+  }).isRequired,
+};
+
+export default Profile;

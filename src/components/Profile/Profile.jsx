@@ -54,5 +54,3 @@ Profile.propTypes = {
     }).isRequired,
   }).isRequired,
 };
-
-export default Profile;
